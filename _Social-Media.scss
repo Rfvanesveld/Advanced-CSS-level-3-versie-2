@@ -1,0 +1,93 @@
+@mixin styling {
+    border: solid black 1px;
+    padding: 10px 30px;}
+
+@mixin movingleft {
+    animation-name: left;
+    animation-duration: 1s;
+    animation-fill-mode: both;}
+
+@mixin movingright {
+    animation-name: right;
+    animation-duration: 1s;}
+
+.social-media {
+    color:white;
+    font-size: 30px;
+    position: relative;
+    left: 350px;
+
+    &__blog{
+    @include styling();
+    background-color: $background-color1;
+    @include movingright();}
+
+    &__twitter{ 
+    @include styling();
+    background-color: $background-color2;
+    @include movingright();}
+
+    &__linkedin{ 
+    @include styling();
+    background-color: $background-color3;
+    @include movingright();}
+
+    &__facebook{ 
+    @include styling();
+    background-color: $background-color4;
+    @include movingright();}
+
+    &__github{ 
+    @include styling();
+    background-color: $background-color5;
+    @include movingright();}
+
+    &__blog::before {
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 600; content: "\f5fc";}
+
+    &__twitter::before {
+    font-family: "Font Awesome 5 Brands"; 
+    content: "\f099";}
+
+    &__linkedin::before {
+    font-family: "Font Awesome 5 Brands"; 
+    content: "\f0e1";}
+
+    &__facebook::before {
+    font-family: "Font Awesome 5 Brands"; 
+    content: "\f39e";}
+    
+    &__github::before {
+    font-family: "Font Awesome 5 Brands"; 
+    content: "\f09b";}
+    
+    &__link {
+    color:white;
+    padding-left: 30px;}
+
+    &__blog:hover{
+    @include movingleft();}
+
+    &__twitter:hover{
+    @include movingleft();}
+
+    &__linkedin:hover{
+    @include movingleft();}
+
+    &__facebook:hover{
+    @include movingleft();}
+
+    &__github:hover{
+    @include movingleft();}}
+
+    @keyframes left{
+    from { transform: translateX(0px);}
+    to {transform: translateX(-350px);}}
+
+    @keyframes right{
+        from {transform: translateX(-350px);}
+        to {transform: translateX(0px);}}
+    
+span {
+    padding: 20px;}
